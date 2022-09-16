@@ -7,7 +7,7 @@
 var app = require('../../app');
 var debug = require('debug')('scrum-pocker-backend:server');
 var http = require('http');
-
+const {Server} = require("socket.io");
 /**
  * Get port from environment and store in Express.
  */
@@ -20,11 +20,14 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
+var io = new Server(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
 
+io.on('connection',(socket)=>{
+  console.log('user connected')
+});
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

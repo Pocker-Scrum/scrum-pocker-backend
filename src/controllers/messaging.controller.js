@@ -6,7 +6,6 @@ async function get(req, res, next) {
     } catch (err) {
         next(err)
     }
-
 }
 
 module.exports = {
