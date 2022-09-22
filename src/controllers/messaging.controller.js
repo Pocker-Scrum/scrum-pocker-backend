@@ -1,4 +1,4 @@
-const messagingService= require('../services/messaging.controller')
+const messagingService= require('../services/messaging.service')
 
 async function get(req, res, next) {
     try {
